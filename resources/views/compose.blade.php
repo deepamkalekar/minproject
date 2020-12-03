@@ -59,11 +59,9 @@
             <div class="box-body">
             
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="To:" name="to" id="to">
+                <input class="form-control" type="text" placeholder="Title:" name="to" id="to">
               </div>
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Subject:" name="subject" id="subject">
-              </div>
+              
               <div class="form-group">
                     <textarea id="compose-textarea" class="form-control" type="text" style="height: 300px" name="discription" id="discription">
                       

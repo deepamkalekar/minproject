@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\email;
+use App\Models\task;
 
 
 class HomeController extends Controller
 {
 
     public function welcome() {
-        $doc=email::get();
+        $doc=task::get();
         return view("welcome",compact("doc"));
     }
 
@@ -17,16 +17,16 @@ class HomeController extends Controller
         return view('compose');
     }
     public function updatemail($nid = null) {
-        $dac=email::where("id","=",$nid)->get();
+        $dac=task::where("id","=",$nid)->get();
         return view('updatemail',compact("dac"));
     }
 
 
   public function update(Request $request){
-    $main=email::where("id","=",$request->eid);
+    $main=task::where("id","=",$request->eid);
     $main->update([
         "To" => $request->to,
-            "subject" =>$request->subject,
+            
             "discription" =>$request->discription
       
     ]);
@@ -43,7 +43,7 @@ class HomeController extends Controller
   public function DeletePro($id){
   
 
-        $del = email::where("id","=",$id)->delete();
+        $del = task::where("id","=",$id)->delete();
   
         if($del){
             session()->flash('message', 'Product Deleted  Successfully..!');
@@ -60,10 +60,10 @@ class HomeController extends Controller
 
 
     public function submitcompose(Request $request){
-        $tabl = new email;
+        $tabl = new task;
         $data = array(
             "To" => $request->to,
-            "subject" =>$request->subject,
+         
             "discription" =>$request->discription,
             "created_at" => now()
         );

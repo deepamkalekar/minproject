@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\email;
+use App\Models\task;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +14,13 @@ use App\Models\email;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/compose', function () {
-    return view('compose');
-});
+// Route::get('/compose', function () {
+//     return view('compose');
+// });
 
 Route::get('/', 'HomeController@welcome'); 
 Route::get('/compose', 'HomeController@compose'); 

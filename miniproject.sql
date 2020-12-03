@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2020 at 04:11 PM
+-- Generation Time: Dec 03, 2020 at 10:21 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `miniproject`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `emails`
---
-
-CREATE TABLE `emails` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `To` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `discription` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `emails`
---
-
-INSERT INTO `emails` (`id`, `To`, `subject`, `discription`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'abc', 'tttttt', 'ssssssssssssssssssssssssss', '2020-12-01 18:30:00', '2020-12-02 09:23:29', '2020-12-02 09:23:29'),
-(2, 'abc', 'tttttt', 'qaaaaaaaaaaaaaaaaaaaaaa', '2020-12-01 18:30:00', NULL, NULL),
-(3, 'abc', 'tttttt', 'aaaaaaaaaaaazzzzzzzzzzzzzzzzzzzzz', '2020-12-01 18:30:00', NULL, NULL),
-(4, 'trnh', 'hgj', 'fjkh', '2020-12-01 18:30:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,7 +58,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2020_12_02_034000_create_emails_table', 1),
-(5, '2020_12_02_143708_deleted_at_email', 2);
+(5, '2020_12_02_143708_deleted_at_email', 2),
+(6, '2020_12_03_090751_create_tasks_table', 3),
+(7, '2020_12_03_091504_t_delete_at', 4);
 
 -- --------------------------------------------------------
 
@@ -97,6 +73,28 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `To` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discription` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `To`, `discription`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'deepam      kalekar', 'IT', '2020-12-03 03:47:42', '2020-12-03 03:49:37', '2020-12-03 03:49:37');
 
 -- --------------------------------------------------------
 
@@ -120,12 +118,6 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `emails`
---
-ALTER TABLE `emails`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -145,6 +137,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `tasks`
+--
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -156,12 +154,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `emails`
---
-ALTER TABLE `emails`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -171,7 +163,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

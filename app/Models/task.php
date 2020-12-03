@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class email extends Model
+class task extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $table ='emails';
+    protected $table ='tasks';
 }

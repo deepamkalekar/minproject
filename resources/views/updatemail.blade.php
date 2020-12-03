@@ -60,12 +60,10 @@
             @isset($dac)
               @foreach($dac as $c)
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="To:" name="to" id="to" value="{{$c->To}}">
+                <input class="form-control" type="text" placeholder="Title:" name="to" id="to" value="{{$c->To}}">
                 <input type="hidden" name="eid" id="eid" value="{{$c->id}}">
               </div>
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Subject:" name="subject" id="subject" value="{{$c->subject}}">
-              </div>
+             
               <div class="form-group">
                     <textarea id="compose-textarea" class="form-control" type="text" style="height: 300px" name="discription" id="discription" value="">
                     {{$c->discription}}
