@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\email;
+use Carbon\Carbon;
 // use DB;
 
 class HomeController extends Controller
@@ -23,8 +24,7 @@ class HomeController extends Controller
 
 
   public function update(Request $request){
-    $main=email::where("id","=",$request->id);
-    
+    $main=email::where("id","=",$request->eid);
     $main->update([
         "To" => $request->to,
             "subject" =>$request->subject,
@@ -66,7 +66,7 @@ class HomeController extends Controller
             "To" => $request->to,
             "subject" =>$request->subject,
             "discription" =>$request->discription,
-            "created_at" =>date("Y-m-d")
+            "created_at" => now()
         );
         $save = $tabl->insert($data);
         if($save){

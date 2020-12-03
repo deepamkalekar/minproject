@@ -73,7 +73,7 @@ function DeletePro(id){
                   <tr>
                     <td class="mailbox-name"><a href="read-mail.html">{{$d->To}}</a></td>
                     <td class="mailbox-subject">{{$d->discription}}</td>
-                    <td class="mailbox-date">5 mins ago</td>
+                    <td class="mailbox-date">{{$d->created_at->diffForHumans() }}</td>
                     <td><button type="button" class="btn btn-default btn-sm" onclick="DeletePro('{{$d->id}}')"><i class="fa fa-trash-o"></i></button></td>
                     <td><a href="/updatemail/{{$d->id}}" type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a></td>
                   </tr>
