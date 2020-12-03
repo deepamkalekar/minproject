@@ -44,7 +44,7 @@
         <div class="col-md-9">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Compose New Message</h3>
+              <h3 class="box-title">Create New Task</h3>
             </div>
             <!-- /.box-header -->
             <div style="text-align:center;">

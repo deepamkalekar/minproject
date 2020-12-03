@@ -31,11 +31,11 @@ class HomeController extends Controller
       
     ]);
     if($main){
-        session()->flash('messagee', 'mail update  Successfully..!');
+        session()->flash('messagee', 'Task update  Successfully..!');
         return redirect()->back();
     }
     else{
-        session()->flash('messagee', 'mail Not update ...!');
+        session()->flash('messagee', 'Task Not update ...!');
         return redirect()->back();
     }
   }
@@ -46,11 +46,11 @@ class HomeController extends Controller
         $del = task::where("id","=",$id)->delete();
   
         if($del){
-            session()->flash('message', 'Product Deleted  Successfully..!');
+            session()->flash('message', 'Task Deleted  Successfully..!');
             return redirect()->back();
         }
         else{
-            session()->flash('message', 'Product Not Deleted ...!');
+            session()->flash('message', 'Task Not Deleted ...!');
             return redirect()->back();
         }
    
@@ -69,11 +69,11 @@ class HomeController extends Controller
         );
         $save = $tabl->insert($data);
         if($save){
-            session()->flash('messagee', 'mail Send  Successfully..!');
+            session()->flash('messagee', 'Task Send  Successfully..!');
             return redirect()->back();
         }
         else{
-            session()->flash('messagee', 'mail Not Send ...!');
+            session()->flash('messagee', 'Task Not Send ...!');
             return redirect()->back();
         }
     }
