@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\email;
-use Carbon\Carbon;
-// use DB;
+
 
 class HomeController extends Controller
 {
